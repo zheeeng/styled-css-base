@@ -35,6 +35,12 @@ export const demoSet = {
             <input type="text" />
         </label>
     ),
+    Number: () => (
+        <label>
+            Number
+            <input type="number" />
+        </label>
+    ),
     Hr: () => (
         <hr />
     )
@@ -47,6 +53,7 @@ export const createDemoSet = ({ preCode }: { preCode: string }) => (
             {demoSet.Section(demoSet.Select())}
             {demoSet.Section(demoSet.Radio())}
             {demoSet.Section(demoSet.Text())}
+            {demoSet.Section(demoSet.Number())}
             {demoSet.Section(demoSet.Hr())}
         </>
     )

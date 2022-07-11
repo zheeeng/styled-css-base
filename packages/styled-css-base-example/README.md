@@ -16,8 +16,6 @@ yarn add styled-css-base (or npm/pnpm)
 
 ## Presets
 
-At presents, we have some preset style:
-
 * [Simple](https://styled-css-base.zheeeng.me/#/simple)
 
 ## 👇 Usages
