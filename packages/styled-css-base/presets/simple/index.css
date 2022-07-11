@@ -22,8 +22,40 @@ section section:not(:last-child) {
     margin-right: 2em;
 }
 
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+h1 {
+    font-weight: 600;
+    font-size: 2em;
+}
+h2 {
+    font-weight: 600;
+    font-size: 1.75em;
+}
+h3 {
+    font-weight: 600;
+    font-size: 1.5em;
+}
+h4 {
+    font-weight: 600;
+    font-size: 1.25em;
+}
+h5 {
+    font-weight: 500;
+    font-size: 1.25em;
+}
+h6 {
+    font-weight: 500;
+    font-size: 1em;
+}
+p {
+    font-weight: 400;
+    font-size: 1em;
+}
+
 table, tr, th, td {
-    border: #d1d5db solid 1px;
+    border: rgba(209, 213, 219, 1) solid 1px;
     padding: 0.5em 1em;
 }
 
@@ -80,31 +112,28 @@ label {
     margin: 0;
 }
 
-input, select {
+input, select, textarea {
     appearance: none;
     padding: 0.5rem;
     margin-left: 0.5rem;
-    border: #d1d5db solid 1px;
+    border: rgba(209, 213, 219, 1) solid 1px;
     border-radius: 0.375rem;
 }
 
-input[type=text] {
+input[type=number], input[type=text], textarea {
     padding-left: 1rem;
     padding-right: 1rem;
 }
 
-input[type=number] {
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
-
-input[type=text]:focus-visible, input[type=number]:focus-visible {
+input:focus, select:focus, textarea:focus,
+input:hover, select:hover, textarea:hover,
+input:focus-visible, select:focus-visible, textarea:focus-visible, {
     outline: 1px solid currentColor;
 }
 
 input[type=radio] {
     border-radius: 50%;
-    border: 0.1em solid #d1d5db;
+    border: 0.1em solid rgba(209, 213, 219, 1);
     padding: 0.4em;
     box-sizing: border-box;
 }
@@ -127,6 +156,54 @@ input[type=checkbox]:checked {
 
 input[type=checkbox]:focus {
     box-shadow: transparent 0px 0px 0px 1px, currentColor 0px 0px 0px 3px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    appearance: none;
+    width: 1em;
+    height: 1em;
+    margin-top: -0.25em;
+    border-radius: 50%;
+    background: rgba(174, 174, 174, 1);
+}
+
+input[type=range]::-moz-range-thumb {
+    appearance: none;
+    width: 1em;
+    height: 1em;
+    margin-top: -0.25em;
+    border-radius: 50%;
+    background: rgba(174, 174, 174, 1);
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    transition: background-color 0.2s ease-in-out;
+    appearance: none;
+    background-color: rgba(243, 244, 246, 1);
+    height: 0.5em;
+}
+
+input[type=range]::-moz-range-track {
+    transition: background-color 0.2s ease-in-out;
+    appearance: none;
+    background-color: rgba(243, 244, 246, 1);
+    height: 0.5em;
+}
+
+input[type=range]:hover::-webkit-slider-runnable-track {
+    background-color: rgba(216, 216, 216, 1);
+}
+
+input[type=range]:hover::-moz-range-track {
+    background-color: rgba(216, 216, 216, 1);
+}
+
+input[type=radio], input[type=checkbox], input[type=range] {
+    cursor: pointer;
+}
+
+input[type=color] {
+    padding: 0.25em;
 }
 
 select {
@@ -162,6 +239,7 @@ img, iframe {
     border: none;
     border-radius: 0.25em;
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+    background-color: rgba(249, 250, 251, 1);
 }
 img:hover, iframe:hover {
     box-shadow: 0 0 3px 5px rgba(0, 0, 0, 0.1);
@@ -170,6 +248,6 @@ img:hover, iframe:hover {
 hr {
     margin: 1em 0;
     border: none;
-    border-top: #d1d5db dashed 1px;
+    border-top: rgba(209, 213, 219, 1) dashed 1px;
     width: 100%;
 }

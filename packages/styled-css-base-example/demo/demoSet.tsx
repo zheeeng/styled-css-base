@@ -9,6 +9,27 @@ export const demoSet = {
             {child}
         </section>
     ),
+    H1: () => (
+        <h1>head 1</h1>
+    ),
+    H2: () => (
+        <h2>head 2</h2>
+    ),
+    H3: () => (
+        <h3>head 3</h3>
+    ),
+    H4: () => (
+        <h4>head 4</h4>
+    ),
+    H5: () => (
+        <h5>head 5</h5>
+    ),
+    H6: () => (
+        <h6>head 6</h6>
+    ),
+    P: () => (
+        <p>paragraph</p>
+    ),
     Pre: (code: string) => (
         <pre>{code}</pre>
     ),
@@ -35,6 +56,12 @@ export const demoSet = {
             <input type="checkbox" />
         </label>
     ),
+    Range: () => (
+        <label>
+            Range
+            <input type="range" />
+        </label>
+    ),
     Text: () => (
         <label>
             Text
@@ -45,6 +72,35 @@ export const demoSet = {
         <label>
             Number
             <input type="number" />
+        </label>
+    ),
+    Password: () => (
+        <label>
+            Password
+            <input type="password" />
+        </label>
+    ),
+    Date: () => (
+        <label>
+            Date
+            <input type="date" />
+        </label>
+    ),
+    Textarea: () => (
+        <label>
+            <textarea />
+        </label>
+    ),
+    Color: () => (
+        <label>
+            Color
+            <input type="color" />
+        </label>
+    ),
+    File: () => (
+        <label>
+            File
+            <input type="file" />
         </label>
     ),
     Table: () => (
@@ -129,15 +185,40 @@ export const createDemoSet = ({ preCode }: { preCode: string }) => (
             {demoSet.Section(demoSet.Pre(preCode))}
             {demoSet.Section(
                 <>
+                    {demoSet.Section(demoSet.H1())}
+                    {demoSet.Section(demoSet.H2())}
+                    {demoSet.Section(demoSet.H3())}
+                    {demoSet.Section(demoSet.H4())}
+                    {demoSet.Section(demoSet.H5())}
+                    {demoSet.Section(demoSet.H6())}
+                    {demoSet.Section(demoSet.P())}
+                </>
+            )}
+            {demoSet.Section(
+                <>
                     {demoSet.Section(demoSet.Select())}
                     {demoSet.Section(demoSet.Radio())}
                     {demoSet.Section(demoSet.CheckBox())}
+                    {demoSet.Section(demoSet.Range())}
                 </>
             )}
             {demoSet.Section(
                 <>
                     {demoSet.Section(demoSet.Text())}
                     {demoSet.Section(demoSet.Number())}
+                </>
+            )}
+            {demoSet.Section(
+                <>
+                    {demoSet.Section(demoSet.Password())}
+                    {demoSet.Section(demoSet.Date())}
+                </>
+            )}
+            {demoSet.Section(demoSet.Textarea())}
+            {demoSet.Section(
+                <>
+                    {demoSet.Section(demoSet.Color())}
+                    {demoSet.Section(demoSet.File())}
                 </>
             )}
             {demoSet.Section(demoSet.Table())}
