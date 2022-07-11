@@ -8,30 +8,29 @@
 
 Provide a series of basic CSS style sheets for styling your demonstration.
 
-## 🧩  Installation
+## 🧩 Installation
 
 ```bash
 yarn add styled-css-base (or npm/pnpm)
 ```
 
-## Presets
+## 🍀 Presets
 
 * [Simple](https://styled-css-base.zheeeng.me/#/simple)
 
 ## 👇 Usages
 
-### Import for application bundler
+### Integrate via application bundler
 
 ```ts
-  @import (less) "styled-css-base/presets/simple/index.css";
-
+import 'styled-css-base/presets/simple/index.css';
 ```
 
 _Consider these styles only use element selector, if you want to not leak them to your entire application, consider using them for shadow DOM or using them through CSS processors._
 
-### Import for CSS processor
+### Integrate via CSS processors
 
-We recommend nesting the `styled-css-base`:
+We recommend nesting the `styled-css-base` for scoping these styles:
 
 __scss:__
 
