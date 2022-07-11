@@ -115,6 +115,9 @@ export const demoSet = {
     Img: () => (
         <img src="https://source.unsplash.com/random" />
     ),
+    Iframe: () => (
+        <iframe src="http://randomcolour.com/" />
+    ),
     Hr: () => (
         <hr />
     )
@@ -147,6 +150,7 @@ export const createDemoSet = ({ preCode }: { preCode: string }) => (
             {demoSet.Section(demoSet.Dl())}
             {demoSet.Section(demoSet.Button())}
             {demoSet.Section(demoSet.Img())}
+            {demoSet.Section(demoSet.Iframe())}
             {demoSet.Section(demoSet.Hr())}
         </>
     )
