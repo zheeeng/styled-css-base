@@ -109,6 +109,12 @@ export const demoSet = {
             <dd>is the muscle of the webpage.</dd>
         </dl>
     ),
+    Button: () => (
+        <button>button</button>
+    ),
+    Img: () => (
+        <img src="https://source.unsplash.com/random" />
+    ),
     Hr: () => (
         <hr />
     )
@@ -118,15 +124,29 @@ export const createDemoSet = ({ preCode }: { preCode: string }) => (
     demoSet.Main(
         <>
             {demoSet.Section(demoSet.Pre(preCode))}
-            {demoSet.Section(demoSet.Select())}
-            {demoSet.Section(demoSet.Radio())}
-            {demoSet.Section(demoSet.CheckBox())}
-            {demoSet.Section(demoSet.Text())}
-            {demoSet.Section(demoSet.Number())}
+            {demoSet.Section(
+                <>
+                    {demoSet.Section(demoSet.Select())}
+                    {demoSet.Section(demoSet.Radio())}
+                    {demoSet.Section(demoSet.CheckBox())}
+                </>
+            )}
+            {demoSet.Section(
+                <>
+                    {demoSet.Section(demoSet.Text())}
+                    {demoSet.Section(demoSet.Number())}
+                </>
+            )}
             {demoSet.Section(demoSet.Table())}
-            {demoSet.Section(demoSet.Ul())}
-            {demoSet.Section(demoSet.Ol())}
+            {demoSet.Section(
+                <>
+                    {demoSet.Section(demoSet.Ul())}
+                    {demoSet.Section(demoSet.Ol())}
+                </>
+            )}
             {demoSet.Section(demoSet.Dl())}
+            {demoSet.Section(demoSet.Button())}
+            {demoSet.Section(demoSet.Img())}
             {demoSet.Section(demoSet.Hr())}
         </>
     )

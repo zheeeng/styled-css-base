@@ -1,15 +1,25 @@
 main {
-    background: rgb(243 244 246);
+    background: rgba(243, 244, 246, 1);
     padding: 2em;
     margin-bottom: 2em;
 }
 
 section {
+    display: flex;
     padding: 1em;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
-    background: rgb(255, 255, 255);
+    background: rgba(255, 255, 255, 1);
     border-radius: 0.25em;
     margin-bottom: 2em;
+}
+
+section section {
+    background-color: rgba(249, 250, 251, 1);
+    margin-bottom: 0.5em;
+}
+
+section section:not(:last-child) {
+    margin-right: 2em;
 }
 
 table, tr, th, td {
@@ -22,7 +32,7 @@ th {
 }
 
 tr:nth-child(odd) {
-    background-color: rgb(249, 250, 251);
+    background-color: rgba(249, 250, 251, 1);
 }
 
 th, td {
@@ -31,6 +41,11 @@ th, td {
 
 ul, ol, li {
     margin: 0;
+}
+
+ul, ol {
+    padding-inline-start: 2em;
+    padding-inline-end: 1em;
 }
 
 ul li:not(:last-child), ol li:not(:last-child) {
@@ -44,6 +59,7 @@ dl, dt, dd {
 dl {
     text-indent: 2em;
     margin-bottom: 1em;
+    padding-inline-end: 1em;
 }
 
 dt:not(:last-child), dd:not(:last-child) {
@@ -54,7 +70,7 @@ pre {
     white-space: pre-wrap;
     margin: 0;
     padding: 0.5em;
-    background-color: rgb(249, 250, 251);
+    background-color: rgba(249, 250, 251, 1);
 }
 
 label {
@@ -118,7 +134,36 @@ select {
     padding-right: 2rem;
 }
 
+button {
+    appearance: none;
+    padding: 0.5em 1em;
+    border-radius: 0.25em;
+    color: rgba(243, 244, 246, 1);
+    background-color: rgba(15, 23, 42, 1);
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: rgba(15, 23, 42, 0.8);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+button:focus {
+    box-shadow: currentColor 0px 0px 0px 1px, rgba(15, 23, 42, 1) 0px 0px 0px 2px;
+}
+
+img {
+    transition: box-shadow 0.2s ease-in-out;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+}
+img:hover {
+    box-shadow: 0 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+
 hr {
     margin: 1em 0;
-    border-style: groove;
+    border: none;
+    border-top: #d1d5db dashed 1px;
+    width: 100%;
 }
