@@ -6,10 +6,30 @@ import './simple.scss'
 import './simple.less'
 import './simple.styl'
 import { createDemoSet } from '../demo/demoSet'
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 
 function Example () {
-    const [preprocessor, setPreprocessor] = useState('scss(sass)')
+    const [preprocessor, setPreprocessor] = useState('scss')
+
+    const className = useMemo(() => `showcase-${preprocessor}`, [preprocessor])
+
+    const preCode = useMemo(() => {
+        switch (preprocessor) {
+            case 'scss': {
+                return '.showcase-scss { @import "styled-css-base/presets/simple/index"; }'
+            }
+            case 'less': {
+                return '.showcase-less { @import "styled-css-base/presets/demoSet/index"; }'
+            }
+            case 'less-on-css': {
+                return '.showcase-less-on-css { @import (less) "styled-css-base/presets/demoSet/index.css"; }'
+            }
+            case 'stylus': {
+                return '.showcase-stylus { @import @import "styled-css-base/presets/demoSet/index"; }'
+            }
+        }
+        throw Error('Unknown preprocessor')
+    }, [preprocessor])
 
     return (
         <div style={{ padding: 24 }}>
@@ -17,7 +37,7 @@ function Example () {
                 <label>
                     Your preferred preprocessor:
                     <select value={preprocessor} onChange={e => setPreprocessor(e.currentTarget.value)}>
-                        <option value="scss(sass)">scss(sass)</option>
+                        <option value="scss">scss(sass)</option>
                         <option value="less">less</option>
                         <option value="less-on-css">less-on-css</option>
                         <option value="stylus">stylus</option>
@@ -25,45 +45,10 @@ function Example () {
                 </label>
                 <hr />
             </div>
-            {preprocessor === 'scss(sass)' && (
-                <div className="showcase-scss">
-                    <>
-                        {createDemoSet({
-                            preCode: '.showcase-scss { @import "styled-css-base/presets/simple/index"; }'
-                        })}
-                    </>
-                </div>
-            )}
 
-            {preprocessor === 'less' && (
-                <div className="showcase-less">
-                    <>
-                        {createDemoSet({
-                            preCode: '.showcase-less { @import "styled-css-base/presets/demoSet/index"; }'
-                        })}
-                    </>
-                </div>
-            )}
-
-            {preprocessor === 'less-on-css' && (
-                <div className="showcase-less-on-css">
-                    <>
-                        {createDemoSet({
-                            preCode: '.showcase-less-on-css { @import (less) "styled-css-base/presets/demoSet/index.css"; }'
-                        })}
-                    </>
-                </div>
-            )}
-
-            {preprocessor === 'stylus' && (
-                <div className="showcase-stylus">
-                    <>
-                        {createDemoSet({
-                            preCode: '.showcase-stylus { @import @import "styled-css-base/presets/demoSet/index"; }'
-                        })}
-                    </>
-                </div>
-            )}
+            <div className={className}>
+                {createDemoSet({ preCode })}
+            </div>
         </div>
     )
 }
