@@ -12,9 +12,6 @@
   ],
   "repository": "zheeeng/styled-css-base",
   "license": "MIT",
-  "files": [
-    "dist"
-  ],
   "scripts": {
     "dev": "gulp watchBuild",
     "build": "gulp build"
