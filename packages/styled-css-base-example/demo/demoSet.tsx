@@ -116,7 +116,7 @@ export const demoSet = {
         <img src="https://source.unsplash.com/random" />
     ),
     Iframe: () => (
-        <iframe src="http://randomcolour.com/" />
+        <iframe src="https://rainfor.me/" />
     ),
     Hr: () => (
         <hr />
