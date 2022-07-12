@@ -1,3 +1,7 @@
+*::selection {
+    background-color: rgba(15, 23, 42, 1);
+}
+
 main {
     background: rgba(243, 244, 246, 1);
     padding: 2em;
@@ -205,8 +209,21 @@ input[type=range]:hover::-moz-range-track {
     background-color: rgba(216, 216, 216, 1);
 }
 
-input[type=radio], input[type=checkbox], input[type=range] {
-    cursor: pointer;
+input[type=file]::file-selector-button {
+    cursor: inherit;
+    appearance: none;
+    padding: 0.25em 0.5em;
+    border-radius: 0.25em;
+    font-size: 0.5em;
+    color: rgba(243, 244, 246, 1);
+    background-color: rgba(15, 23, 42, 1);
+    transition: background-color 0.2s ease-in-out;
+    margin-right: 1em;
+}
+
+input[type=file]::file-selector-button:hover {
+    background-color: rgba(15, 23, 42, 0.8);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1), 0 0 2px rgba(0, 0, 0, 0.06);
 }
 
 input[type=color] {
@@ -228,7 +245,6 @@ button {
     border-radius: 0.25em;
     color: rgba(243, 244, 246, 1);
     background-color: rgba(15, 23, 42, 1);
-    cursor: pointer;
     transition: background-color 0.2s ease-in-out;
 }
 
@@ -239,6 +255,10 @@ button:hover {
 
 button:focus {
     box-shadow: currentColor 0px 0px 0px 1px, rgba(15, 23, 42, 1) 0px 0px 0px 2px;
+}
+
+input[type=radio], input[type=checkbox], input[type=range], input[type=color], input[type=file], select, button {
+    cursor: pointer;
 }
 
 img, iframe {
