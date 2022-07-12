@@ -16,7 +16,18 @@ yarn add styled-css-base (or npm/pnpm)
 
 ## 🍀 Presets
 
-* [Simple](https://styled-css-base.zheeeng.me/#/simple)
+<ul>
+    <li>
+        <details>
+            <summary>
+                <a href="https://styled-css-base.zheeeng.me/#/simple" rel="nofollow">Simple Style</a>
+            </summary>
+            <br />
+            <img src="https://user-images.githubusercontent.com/1303154/178388028-33a2ecc0-0b8c-46bd-aa9f-b0b72a23b9b4.png" />
+        </details>
+    </li>
+</ul>
+
 
 ## 👇 Usages
 
