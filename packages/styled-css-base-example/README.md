@@ -6,13 +6,9 @@
 ![pages workflow](https://github.com/zheeeng/styled-css-base/actions/workflows/pages.yml/badge.svg)
 [![npm version](https://img.shields.io/npm/v/styled-css-base.svg)](https://www.npmjs.com/package/styled-css-base)
 
-Provide a series of basic CSS style sheets for styling your demonstration.
+> Lightweight basic CSS style sheets for styling your HTML elements.
 
-## 🧩 Installation
-
-```bash
-yarn add styled-css-base (or npm/pnpm)
-```
+If you get tired of setting up a comprehensive styling scaffold, you may try returning back to this primitive styling ways.
 
 ## 🍀 Presets
 
@@ -28,20 +24,61 @@ yarn add styled-css-base (or npm/pnpm)
     </li>
 </ul>
 
-
 ## 👇 Usages
 
-### Integrate via application bundler
+### Copying to your project
+
+ See the [releases](https://github.com/zheeeng/styled-css-base/releases).
+
+### Using with application bundler
+
+#### 🧩 Installation
+
+```bash
+yarn add styled-css-base (or npm/pnpm)
+```
 
 ```ts
 import 'styled-css-base/presets/simple/index.css';
 ```
 
-_Consider these styles only use element selector, if you want to not leak them to your entire application, consider using them for shadow DOM or using them through CSS processors._
+```css
+@import "styled-css-base/presets/simple/index.css";
+```
 
-### Integrate via CSS processors
+### Using CDN link
 
-We recommend nesting the `styled-css-base` for scoping these styles:
+```html
+<link rel="stylesheet" href="https://unpkg.com/styled-css-base/presets/simple/index.css">
+```
+
+```ts
+import 'https://unpkg.com/styled-css-base/presets/simple/index.css'
+```
+
+```css
+@import "https://unpkg.com/styled-css-base/presets/simple/index.css"
+```
+
+---
+
+_Considering these styles only use the CSS tag selectors, if you do not want to leak them to your entire application, you may try using the [shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM) or the [CSS preprocessors](https://developer.mozilla.org/en-US/docs/Glossary/CSS_preprocessor)._
+
+### Using with shadow DOM
+
+```js
+// Apply external styles to the shadow DOM
+const linkElem = document.createElement('link');
+linkElem.setAttribute('rel', 'stylesheet');
+linkElem.setAttribute('href', 'https://unpkg.com/styled-css-base/presets/simple/index.css');
+
+// Attach the created element to the shadow DOM
+shadow.appendChild(linkElem);
+```
+
+### Using with CSS preprocessors
+
+We __recommend__ nesting the `styled-css-base` for scoping them:
 
 __scss:__
 

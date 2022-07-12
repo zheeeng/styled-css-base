@@ -2,13 +2,19 @@
   "name": "styled-css-base",
   "version": "0.0.6",
   "author": "Zheeeng <hi@zheeeng.me>",
-  "description": "Provide a series of basic CSS style sheets for styling your demonstration.",
+  "description": "Lightweight basic CSS style sheets for styling your HTML elements.",
   "keywords": [
-    "stylesheet",
+    "styleSheet",
     "styled",
     "css",
     "form",
-    "demonstration"
+    "demonstration",
+    "shadow DOM",
+    "CDN",
+    "sass",
+    "scss",
+    "less",
+    "stylus"
   ],
   "repository": "zheeeng/styled-css-base",
   "license": "MIT",
