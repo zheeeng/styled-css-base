@@ -19,7 +19,7 @@ If you get tired of setting up a comprehensive styling scaffold, you may try ret
                 <a href="https://styled-css-base.zheeeng.me/#/simple" rel="nofollow">Simple Style</a>
             </summary>
             <br />
-            <img src="https://user-images.githubusercontent.com/1303154/178388028-33a2ecc0-0b8c-46bd-aa9f-b0b72a23b9b4.png" />
+            <img src="https://user-images.githubusercontent.com/1303154/178547756-cd9ff332-07a0-4a15-837d-deea3f695586.png" />
         </details>
     </li>
 </ul>
