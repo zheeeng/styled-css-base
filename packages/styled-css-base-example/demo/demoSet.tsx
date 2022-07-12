@@ -9,6 +9,11 @@ export const demoSet = {
             {child}
         </section>
     ),
+    Article: () => (
+        <article>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </article>
+    ),
     H1: () => (
         <h1>head 1</h1>
     ),
@@ -183,6 +188,7 @@ export const createDemoSet = ({ preCode }: { preCode: string }) => (
     demoSet.Main(
         <>
             {demoSet.Section(demoSet.Pre(preCode))}
+            {demoSet.Section(demoSet.Article())}
             {demoSet.Section(
                 <>
                     {demoSet.Section(demoSet.H1())}

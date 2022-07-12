@@ -7,7 +7,7 @@ main {
 section {
     display: flex;
     padding: 1em;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1), 0 0 2px rgba(0, 0, 0, 0.06);
     background: rgba(255, 255, 255, 1);
     border-radius: 0.25em;
     margin-bottom: 2em;
@@ -20,6 +20,13 @@ section section {
 
 section section:not(:last-child) {
     margin-right: 2em;
+}
+
+article {
+    padding: 1em;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 0.25em;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1), 0 0 2px rgba(0, 0, 0, 0.06);
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -60,7 +67,7 @@ table, tr, th, td {
 }
 
 th {
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1), 0 0 2px rgba(0, 0, 0, 0.06);
 }
 
 tr:nth-child(odd) {
@@ -227,7 +234,7 @@ button {
 
 button:hover {
     background-color: rgba(15, 23, 42, 0.8);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1), 0 0 2px rgba(0, 0, 0, 0.06);
 }
 
 button:focus {
@@ -238,7 +245,7 @@ img, iframe {
     transition: box-shadow 0.2s ease-in-out;
     border: none;
     border-radius: 0.25em;
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.1);
     background-color: rgba(249, 250, 251, 1);
 }
 img:hover, iframe:hover {
