@@ -6,7 +6,7 @@
 ![pages workflow](https://github.com/zheeeng/styled-css-base/actions/workflows/pages.yml/badge.svg)
 [![npm version](https://img.shields.io/npm/v/styled-css-base.svg)](https://www.npmjs.com/package/styled-css-base)
 
-> Lightweight basic CSS style sheets for styling your HTML elements.
+> Lightweight basic CSS style sheets.
 
 If you get tired of setting up a comprehensive styling scaffold, you may try returning back to this primitive styling ways.
 

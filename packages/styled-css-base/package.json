@@ -2,7 +2,7 @@
   "name": "styled-css-base",
   "version": "0.0.7",
   "author": "Zheeeng <hi@zheeeng.me>",
-  "description": "Lightweight basic CSS style sheets for styling your HTML elements.",
+  "description": "Lightweight basic CSS style sheets.",
   "keywords": [
     "styleSheet",
     "styled",
