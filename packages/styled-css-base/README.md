@@ -62,23 +62,11 @@ import 'https://unpkg.com/styled-css-base/presets/simple/index.css'
 
 ---
 
-_Considering these styles only use the CSS tag selectors, if you do not want to leak them to your entire application, you may try using the [shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM) or the [CSS preprocessors](https://developer.mozilla.org/en-US/docs/Glossary/CSS_preprocessor)._
-
-### Using with shadow DOM
-
-```js
-// Apply external styles to the shadow DOM
-const linkElem = document.createElement('link');
-linkElem.setAttribute('rel', 'stylesheet');
-linkElem.setAttribute('href', 'https://unpkg.com/styled-css-base/presets/simple/index.css');
-
-// Attach the created element to the shadow DOM
-shadow.appendChild(linkElem);
-```
+_Considering these styles only use the CSS tag selectors, if you care about isolate them from other public styling, you may try to use the [CSS preprocessors](https://developer.mozilla.org/en-US/docs/Glossary/CSS_preprocessor) or the [shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM)._
 
 ### Using with CSS preprocessors
 
-We __recommend__ nesting the `styled-css-base` for scoping them:
+The CSS [Descendant combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/Descendant_combinator) can scope our styles and we __recommend__ nesting the `styled-css-base` by these common CSS preprocessors:
 
 __scss:__
 
@@ -110,4 +98,18 @@ __stylus__:
 .showcase {
     @import "styled-css-base/presets/simple/index";
 }
+```
+
+### Using with Shadow DOM
+
+Style Encapsulation is the built-in feature of Shadow DOM.
+
+```js
+// Apply external styles to the Shadow DOM
+const linkElem = document.createElement('link');
+linkElem.setAttribute('rel', 'stylesheet');
+linkElem.setAttribute('href', 'https://unpkg.com/styled-css-base/presets/simple/index.css');
+
+// Attach the created element to the Shadow DOM
+shadow.appendChild(linkElem);
 ```

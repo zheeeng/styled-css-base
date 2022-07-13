@@ -1,13 +1,16 @@
 const { src, dest, watch } = require('gulp');
 const rename = require('gulp-rename')
+const autoprefixer = require('gulp-autoprefixer')
 
 const config = {
-    src: 'presets/**/*.css',
+    src: 'src/**/*.css',
     dest: 'presets'
 }
 
 function build() {
     return src(config.src)
+        .pipe(autoprefixer())
+        .pipe(dest(config.dest))
         .pipe(rename({ extname: '.scss' }))
         .pipe(dest(config.dest))
         .pipe(rename({ extname: '.less' }))
