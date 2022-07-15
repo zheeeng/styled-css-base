@@ -255,6 +255,22 @@ export const demoSet = {
     Button: () => (
         <button>button</button>
     ),
+    Dialog: () => (
+        <div>
+            <button onClick={() => {
+                // @ts-expect-error: assert dialog reference is not null
+                (window.dialog as HTMLDialogElement).showModal()
+            }}>Open Dialog</button>
+            <dialog id="dialog">
+                <header>Dialog modal</header>
+                <p>Oh, jingle bells, jingle bells, Jingle all the way</p>
+                <button onClick={() => {
+                    // @ts-expect-error: assert dialog reference is not null
+                    (window.dialog as HTMLDialogElement).close()
+                }}>Close Dialog</button>
+            </dialog>
+        </div>
+    ),
     Img: () => (
         <img src="https://source.unsplash.com/random" />
     ),
@@ -319,7 +335,12 @@ export const createDemoSet = ({ preCode }: { preCode: string }) => (
                 </>
             )}
             {demoSet.Section(demoSet.Dl())}
-            {demoSet.Section(demoSet.Button())}
+            {demoSet.Section(
+                <>
+                    {demoSet.Section(demoSet.Button())}
+                    {demoSet.Section(demoSet.Dialog())}
+                </>
+            )}
             {demoSet.Section(demoSet.Img())}
             {demoSet.Section(demoSet.Iframe())}
             {demoSet.Section(demoSet.Hr())}

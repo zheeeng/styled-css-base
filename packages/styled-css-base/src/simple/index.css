@@ -2,10 +2,15 @@
     background-color: rgba(15, 23, 42, 1);
 }
 
+header {
+    font-size: 1.5em;
+    text-align: center;
+    margin-bottom: 0.5em;
+}
+
 main {
     background: rgba(243, 244, 246, 1);
     padding: 2em;
-    margin-bottom: 2em;
 }
 
 section {
@@ -283,6 +288,29 @@ button:hover {
 
 button:focus {
     box-shadow: currentColor 0px 0px 0px 1px, rgba(15, 23, 42, 1) 0px 0px 0px 2px;
+}
+
+dialog[open] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+dialog::backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(2px);
+    overflow: hidden;
+}
+
+dialog > *:not(:last-child) {
+    margin-bottom: 1em;
 }
 
 input[type=radio], input[type=checkbox], input[type=range], input[type=color], input[type=file], select, button {
