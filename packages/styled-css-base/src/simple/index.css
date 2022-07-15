@@ -2,6 +2,11 @@
     background-color: rgba(15, 23, 42, 1);
 }
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
 header {
     font-size: 1.5em;
     text-align: center;
@@ -39,9 +44,6 @@ article {
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.1), 0 0 2px rgba(0, 0, 0, 0.06);
 }
 
-h1, h2, h3, h4, h5, h6, p {
-    margin: 0;
-}
 h1 {
     font-weight: 600;
     font-size: 2em;
@@ -103,7 +105,6 @@ th, td {
 details {
     flex-grow: 1;
     display: block;
-    margin: 0;
     padding: 0.5em;
     background-color: rgba(249, 250, 251, 1);
 }
@@ -115,10 +116,6 @@ summary {
     margin-bottom: 0.5em;
 }
 
-ul, ol, li {
-    margin: 0;
-}
-
 ul, ol {
     padding-inline-start: 2em;
     padding-inline-end: 1em;
@@ -126,10 +123,6 @@ ul, ol {
 
 ul li:not(:last-child), ol li:not(:last-child) {
     margin-bottom: 0.25em;
-}
-
-dl, dt, dd {
-    margin: 0;
 }
 
 dl {
@@ -142,10 +135,19 @@ dt:not(:last-child), dd:not(:last-child) {
     margin-bottom: 0.25em;
 }
 
-pre {
+pre, code, blockquote {
     white-space: pre-wrap;
-    margin: 0;
     padding: 0.5em;
+}
+
+blockquote {
+    border-left: 4px solid rgba(15, 23, 42, 0.5);
+    padding-left: 2em;
+}
+
+pre, blockquote {
+    display: block;
+    flex-grow: 1;
     background-color: rgba(249, 250, 251, 1);
 }
 
@@ -153,7 +155,6 @@ label {
     font-weight: 600;
     display: inline-flex;
     align-items: center;
-    margin: 0;
 }
 
 input, select, textarea {
@@ -337,6 +338,7 @@ img, iframe {
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.1);
     background-color: rgba(249, 250, 251, 1);
 }
+
 img:hover, iframe:hover {
     box-shadow: 0 0 3px 5px rgba(0, 0, 0, 0.1);
 }

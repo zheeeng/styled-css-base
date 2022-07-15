@@ -13,7 +13,7 @@ function Example () {
 
     const className = useMemo(() => `showcase-${preprocessor}`, [preprocessor])
 
-    const preCode = useMemo(() => {
+    const code = useMemo(() => {
         switch (preprocessor) {
             case 'scss': {
                 return '.showcase-scss { @import "styled-css-base/presets/simple/index"; }'
@@ -47,7 +47,7 @@ function Example () {
             </div>
 
             <div className={className}>
-                {createDemoSet({ preCode })}
+                {createDemoSet({ code })}
             </div>
         </div>
     )

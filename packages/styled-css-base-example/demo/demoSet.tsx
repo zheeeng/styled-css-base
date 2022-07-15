@@ -35,8 +35,14 @@ export const demoSet = {
     P: () => (
         <p>paragraph</p>
     ),
-    Pre: (code: string) => (
-        <pre>{code}</pre>
+    Code: (code: string) => (
+        <pre><code>{code}</code></pre>
+    ),
+    Quote: () => (
+        <blockquote>
+            {'子在川上曰：“逝者如斯夫！不舍昼夜。”\n'}
+            {'-- 论语《子罕》'}
+        </blockquote>
     ),
     Select: (disabled?: boolean) => (
         <label>
@@ -282,10 +288,11 @@ export const demoSet = {
     )
 }
 
-export const createDemoSet = ({ preCode }: { preCode: string }) => (
+export const createDemoSet = ({ code }: { code: string }) => (
     demoSet.Main(
         <>
-            {demoSet.Section(demoSet.Pre(preCode))}
+            {demoSet.Section(demoSet.Code(code))}
+            {demoSet.Section(demoSet.Quote())}
             {demoSet.Section(demoSet.Article())}
             {demoSet.Section(
                 <>
