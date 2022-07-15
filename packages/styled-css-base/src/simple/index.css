@@ -290,6 +290,11 @@ button:focus {
     box-shadow: currentColor 0px 0px 0px 1px, rgba(15, 23, 42, 1) 0px 0px 0px 2px;
 }
 
+button[disabled] {
+    color: rgba(223, 224, 226, 1);
+    background-color: rgba(15, 23, 42, 0.5);
+}
+
 dialog[open] {
     display: flex;
     flex-direction: column;
@@ -315,6 +320,14 @@ dialog > *:not(:last-child) {
 
 input[type=radio], input[type=checkbox], input[type=range], input[type=color], input[type=file], select, button {
     cursor: pointer;
+}
+
+input[disabled], textarea[disabled], select[disabled], button[disabled], *[disabled] {
+    cursor: not-allowed;
+}
+
+input[disabled]:hover, textarea[disabled]:hover, select[disabled]:hover, button[disabled]:hover, *[disabled]:hover {
+    outline: none;
 }
 
 img, iframe {

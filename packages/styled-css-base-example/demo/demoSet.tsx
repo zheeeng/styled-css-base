@@ -38,10 +38,10 @@ export const demoSet = {
     Pre: (code: string) => (
         <pre>{code}</pre>
     ),
-    Select: () => (
+    Select: (disabled?: boolean) => (
         <label>
             Select
-            <select>
+            <select disabled={disabled}>
                 <option value="option1">option1</option>
                 <option value="option2">option2</option>
                 <option value="option3">option3</option>
@@ -49,63 +49,63 @@ export const demoSet = {
             </select>
         </label>
     ),
-    Radio: () => (
+    Radio: (disabled?: boolean) => (
         <label>
             Radio
-            <input type="radio" />
+            <input type="radio" disabled={disabled}/>
         </label>
     ),
-    CheckBox: () => (
+    CheckBox: (disabled?: boolean) => (
         <label>
             CheckBox
-            <input type="checkbox" />
+            <input type="checkbox" disabled={disabled}/>
         </label>
     ),
-    Range: () => (
+    Range: (disabled?: boolean) => (
         <label>
             Range
-            <input type="range" />
+            <input type="range" disabled={disabled}/>
         </label>
     ),
-    Text: () => (
+    Text: (disabled?: boolean) => (
         <label>
             Text
-            <input type="text" />
+            <input type="text" disabled={disabled}/>
         </label>
     ),
-    Number: () => (
+    Number: (disabled?: boolean) => (
         <label>
             Number
-            <input type="number" />
+            <input type="number" disabled={disabled}/>
         </label>
     ),
-    Password: () => (
+    Password: (disabled?: boolean) => (
         <label>
             Password
-            <input type="password" />
+            <input type="password" disabled={disabled}/>
         </label>
     ),
-    Date: () => (
+    Date: (disabled?: boolean) => (
         <label>
             Date
-            <input type="date" />
+            <input type="date" disabled={disabled}/>
         </label>
     ),
-    Textarea: () => (
+    Textarea: (disabled?: boolean) => (
         <label>
-            <textarea />
+            <textarea disabled={disabled}/>
         </label>
     ),
-    Color: () => (
+    Color: (disabled?: boolean) => (
         <label>
             Color
-            <input type="color" />
+            <input type="color" disabled={disabled}/>
         </label>
     ),
-    File: () => (
+    File: (disabled?: boolean) => (
         <label>
             File
-            <input type="file" />
+            <input type="file" disabled={disabled}/>
         </label>
     ),
     Table: () => (
@@ -252,8 +252,8 @@ export const demoSet = {
             <dd>is the muscle of the webpage.</dd>
         </dl>
     ),
-    Button: () => (
-        <button>button</button>
+    Button: (disabled?: boolean) => (
+        <button disabled={disabled}>button</button>
     ),
     Dialog: () => (
         <div>
@@ -308,8 +308,22 @@ export const createDemoSet = ({ preCode }: { preCode: string }) => (
             )}
             {demoSet.Section(
                 <>
+                    {demoSet.Section(demoSet.Select(true))}
+                    {demoSet.Section(demoSet.Radio(true))}
+                    {demoSet.Section(demoSet.CheckBox(true))}
+                    {demoSet.Section(demoSet.Range(true))}
+                </>
+            )}
+            {demoSet.Section(
+                <>
                     {demoSet.Section(demoSet.Text())}
                     {demoSet.Section(demoSet.Number())}
+                </>
+            )}
+            {demoSet.Section(
+                <>
+                    {demoSet.Section(demoSet.Text(true))}
+                    {demoSet.Section(demoSet.Number(true))}
                 </>
             )}
             {demoSet.Section(
@@ -318,11 +332,28 @@ export const createDemoSet = ({ preCode }: { preCode: string }) => (
                     {demoSet.Section(demoSet.Date())}
                 </>
             )}
-            {demoSet.Section(demoSet.Textarea())}
+            {demoSet.Section(
+                <>
+                    {demoSet.Section(demoSet.Password(true))}
+                    {demoSet.Section(demoSet.Date(true))}
+                </>
+            )}
+            {demoSet.Section(
+                <>
+                    {demoSet.Section(demoSet.Textarea())}
+                    {demoSet.Section(demoSet.Textarea(true))}
+                </>
+            )}
             {demoSet.Section(
                 <>
                     {demoSet.Section(demoSet.Color())}
                     {demoSet.Section(demoSet.File())}
+                </>
+            )}
+            {demoSet.Section(
+                <>
+                    {demoSet.Section(demoSet.Color(true))}
+                    {demoSet.Section(demoSet.File(true))}
                 </>
             )}
             {demoSet.Section(demoSet.Table())}
@@ -338,6 +369,7 @@ export const createDemoSet = ({ preCode }: { preCode: string }) => (
             {demoSet.Section(
                 <>
                     {demoSet.Section(demoSet.Button())}
+                    {demoSet.Section(demoSet.Button(true))}
                     {demoSet.Section(demoSet.Dialog())}
                 </>
             )}
