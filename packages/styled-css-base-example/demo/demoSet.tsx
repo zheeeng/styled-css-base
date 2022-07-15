@@ -215,6 +215,15 @@ export const demoSet = {
             </tfoot>
         </table>
     ),
+    Details: () => (
+        <details>
+            <summary>
+                Summary
+            </summary>
+
+            Details
+        </details>
+    ),
     Ul: () => (
         <ul>
             <li>Unordered list item</li>
@@ -302,6 +311,7 @@ export const createDemoSet = ({ preCode }: { preCode: string }) => (
             )}
             {demoSet.Section(demoSet.Table())}
             {demoSet.Section(demoSet.TableVertical())}
+            {demoSet.Section(demoSet.Details())}
             {demoSet.Section(
                 <>
                     {demoSet.Section(demoSet.Ul())}

@@ -27,6 +27,7 @@ section section:not(:last-child) {
 }
 
 article {
+    flex-grow: 1;
     padding: 1em;
     background: rgba(255, 255, 255, 1);
     border-radius: 0.25em;
@@ -92,6 +93,21 @@ tbody tr:nth-child(odd) {
 
 th, td {
     text-align: left;
+}
+
+details {
+    flex-grow: 1;
+    display: block;
+    margin: 0;
+    padding: 0.5em;
+    background-color: rgba(249, 250, 251, 1);
+}
+
+summary {
+    cursor: pointer;
+    text-decoration: underline;
+    text-indent: 0.5em;
+    margin-bottom: 0.5em;
 }
 
 ul, ol, li {
