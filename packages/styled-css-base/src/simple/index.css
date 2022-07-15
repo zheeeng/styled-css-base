@@ -78,6 +78,18 @@ tr:nth-child(odd) {
     background-color: rgba(249, 250, 251, 1);
 }
 
+thead tr:nth-child(n) {
+    background-color: rgba(209, 213, 219, 0.5);
+}
+
+tfoot tr:nth-child(n) {
+    background: rgba(243, 244, 246, 1);
+}
+
+tbody tr:nth-child(odd) {
+    background-color: rgba(249, 250, 251, 1);
+}
+
 th, td {
     text-align: left;
 }
