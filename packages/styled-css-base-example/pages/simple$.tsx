@@ -11,6 +11,8 @@ import { useMemo, useState } from 'react'
 function Example () {
     const [preprocessor, setPreprocessor] = useState('scss')
 
+    const [theme, setTheme] = useState('auto')
+
     const className = useMemo(() => `showcase-${preprocessor}`, [preprocessor])
 
     const code = useMemo(() => {
@@ -32,7 +34,7 @@ function Example () {
     }, [preprocessor])
 
     return (
-        <div style={{ padding: 24 }}>
+        <div style={{ padding: 24 }} className={className}>
             <div className="showcase-scss">
                 <label>
                     Your preferred preprocessor:
@@ -43,10 +45,22 @@ function Example () {
                         <option value="stylus">stylus</option>
                     </select>
                 </label>
+                <label style={{ marginLeft: 24 }}>
+                    Your preferred theme:
+                    <select value={theme} onChange={e => setTheme(e.currentTarget.value)}>
+                        <option value="auto">auto</option>
+                        <option value="light">light</option>
+                        <option value="dark">dark</option>
+                    </select>
+                </label>
                 <hr />
             </div>
 
-            <div className={className}>
+            <div
+                data-prefers-color-scheme-auto
+                data-prefers-color-scheme-light={theme === 'light' ? 'true' : undefined}
+                data-prefers-color-scheme-dark={theme === 'dark'  ? 'true' : undefined}
+            >
                 {createDemoSet({ code })}
             </div>
         </div>
