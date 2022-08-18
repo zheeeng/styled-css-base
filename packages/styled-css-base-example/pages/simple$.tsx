@@ -35,7 +35,7 @@ function Example () {
 
     return (
         <div style={{ padding: 24 }} className={className}>
-            <div className="showcase-scss">
+            <div>
                 <label>
                     Your preferred preprocessor:
                     <select value={preprocessor} onChange={e => setPreprocessor(e.currentTarget.value)}>
