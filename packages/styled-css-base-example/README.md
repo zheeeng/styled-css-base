@@ -16,10 +16,19 @@ If you get tired of setting up a comprehensive styling scaffold, you may try ret
     <li>
         <details>
             <summary>
-                <a href="https://styled-css-base.zheeeng.me/#/simple" rel="nofollow">Simple Style</a>
+                <a href="https://styled-css-base.zheeeng.me/#/simple" rel="nofollow">Simple Style Light theme</a>
             </summary>
             <br />
-            <img src="https://user-images.githubusercontent.com/1303154/178547756-cd9ff332-07a0-4a15-837d-deea3f695586.png" />
+            <img src="https://raw.githubusercontent.com/zheeeng/styled-css-base/main/screenshots/preset-simple-light-theme.png" />
+        </details>
+    </li>
+    <li>
+        <details>
+            <summary>
+                <a href="https://styled-css-base.zheeeng.me/#/simple" rel="nofollow">Simple Style Dark theme</a>
+            </summary>
+            <br />
+            <img src="https://raw.githubusercontent.com/zheeeng/styled-css-base/main/screenshots/preset-simple-dark-theme.png" />
         </details>
     </li>
 </ul>
@@ -60,9 +69,24 @@ import 'https://unpkg.com/styled-css-base/presets/simple/index.css'
 @import "https://unpkg.com/styled-css-base/presets/simple/index.css"
 ```
 
+### Switch theme
+
+Add HTML attributes [data-prefers-color-scheme-auto], [data-prefers-color-scheme-light], [data-prefers-color-scheme-dark] to themify its children elements.
+
+```html
+<div [data-prefers-color-scheme-auto]>
+    <button>Ok</button>
+    <button>Cancel</button>
+</div>
+```
+
+* `[data-prefers-color-scheme-auto]`: switch theme by user's system preference.
+* `[data-prefers-color-scheme-light]`: force using light theme.
+* `[data-prefers-color-scheme-dark]`: force using dark theme.
+
 ---
 
-_Considering these styles only use the CSS tag selectors, if you care about isolate them from other public styling, you may try to use the [CSS preprocessors](https://developer.mozilla.org/en-US/docs/Glossary/CSS_preprocessor) or the [shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM)._
+_Considering these styles only use the CSS tag selectors, if you care about isolating them from other page's stylesheets, it's recommended to use the [CSS preprocessors](https://developer.mozilla.org/en-US/docs/Glossary/CSS_preprocessor) or the [shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM)._
 
 ### Using with CSS preprocessors
 
